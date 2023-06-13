@@ -1,13 +1,10 @@
-
 package projeto;
 
 import java.util.Objects;
 
+public class Produto implements Comparable<Produto> {
 
-public class Produto implements Comparable <Produto> {
-    
-    
-      private String ID;
+    private String ID;
     private String nome;
     private Double preco;
 
@@ -48,7 +45,7 @@ public class Produto implements Comparable <Produto> {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 59 * hash + Objects.hashCode(this.ID);
+        hash = 47 * hash + Objects.hashCode(this.ID);
         return hash;
     }
 
@@ -64,10 +61,7 @@ public class Produto implements Comparable <Produto> {
             return false;
         }
         final Produto other = (Produto) obj;
-        if (!Objects.equals(this.ID, other.ID)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.ID, other.ID);
     }
 
     @Override
@@ -82,6 +76,6 @@ public class Produto implements Comparable <Produto> {
         return "\nID: " + this.ID
                 + "\nNome: " + this.nome
                 + "\nPreco: " + this.preco;
-}
-    
+    }
+
 }
